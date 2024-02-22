@@ -9,6 +9,14 @@ ModelClass = require("./model.js");
 Model = new ModelClass();
 app.use(cookieParser());
 
+const path = require("path");
+
+// Specify the absolute path to the 'public' directory
+const publicPath = path.join(__dirname, "public");
+
+// Serve static files from the 'public' directory
+app.use(express.static(publicPath));
+
 app.get("/stores", async (req, res) => {
   stores = await Model.getStores();
   res.json(stores);
