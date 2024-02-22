@@ -38,6 +38,7 @@ class ModelClass {
       const { rows } = await this.connection.query(
         `
         SELECT * FROM stores WHERE name = $1
+
       `,
         [store.name]
       );

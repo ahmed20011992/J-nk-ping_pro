@@ -9,7 +9,7 @@ ModelClass = require("./model.js");
 Model = new ModelClass();
 app.use(cookieParser());
 
-app.get("/", async (req, res) => {
+app.get("/stores", async (req, res) => {
   stores = await Model.getStores();
   res.json(stores);
 });
