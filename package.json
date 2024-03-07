@@ -1,14 +1,26 @@
 {
-  "name": "web-example2",
+  "name": "w2group4",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "build": "npm run docker:build && npm run kube:deploy ",
+    "docker:build": "docker build -t test3 . && docker tag test3:latest localhost:5000/test3:latest && docker push localhost:5000/test3:latest",
+    "kube:deploy": "kubectl create namespace labb3 && kubectl apply -f deploy-k8s.yaml -n labb3 || kubectl apply -f deploy-k8s.yaml -n labb3 && kubectl rollout restart -f deploy-k8s.yaml -n labb3" 
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.4.1"
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "pg": "^8.11.3",
+    "pg-pool": "^3.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
   }
 }
