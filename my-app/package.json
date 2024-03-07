@@ -1,0 +1,27 @@
+{
+	"name": "my-app",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/adapter-node": "^4.0.1",
+		"@sveltejs/kit": "^2.0.0",
+		"@sveltejs/vite-plugin-svelte": "^3.0.0",
+		"autoprefixer": "^10.4.18",
+		"daisyui": "^4.7.2",
+		"postcss": "^8.4.35",
+		"svelte": "^4.2.7",
+		"tailwindcss": "^3.4.1",
+		"vite": "^5.0.3"
+	},
+	"type": "module",
+	"dependencies": {
+		"@material-tailwind/html": "^2.2.2",
+		"cors": "^2.8.5"
+	}
+}
